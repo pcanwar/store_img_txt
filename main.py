@@ -4,9 +4,9 @@ import os
 
 filtered_listings = []
 counter = 1
-
+api_uri = 'https://www.example.com/listings/all?page'
 while True:
-    res = requests.get(f'url={counter}')
+    res = requests.get(f'{api_uri}={counter}')
     listings = res.json()
     if (len(listings) == 0) :
         break
@@ -18,7 +18,7 @@ while True:
     counter+=1
 
 # print(filtered_listings)
-list_to_remove = ['The Year of the Tiger #1', 'Test', 'TEst', 'Test Upload','Test Rewards']
+list_to_remove = [ 'Test', 'TEst', 'Test Upload','Test Rewards']
 
 collection_listings = []
 for filtered_listing in filtered_listings :
